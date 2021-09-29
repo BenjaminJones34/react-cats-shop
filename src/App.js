@@ -4,7 +4,7 @@ import Cart from "./components/Cart"
 
 const App = () => {
   const [cartObject, setCartObject] = useState({
-                                        itemsInCart: [{url:"https://cdn2.thecatapi.com/images/c6nlmlFC8.jpg", value: "5.90"}, {url:"https://cdn2.thecatapi.com/images/c6nlmlFC8.jpg", value: "5.90"}],
+                                        itemsInCart: [],
                                         showModal: false,
                                       })
 
