@@ -5,7 +5,7 @@ import CartList from "./CartList"
 export const Modal = (props) => {
     let total = 0
     for (let i = 0; i < props.cartObject.itemsInCart.length; i++) {
-        total += parseInt(props.cartObject.itemsInCart[i].value)
+        total += parseFloat(props.cartObject.itemsInCart[i].value)
     }
     total = total.toFixed(2).toString()
 
