@@ -9,7 +9,7 @@ export const CartList = (props) => {
     let list = props.cartObject.itemsInCart.map((item, index) => <div className="item" id={index}>
                                                                     <img src={item.url} alt="Cat"></img>
                                                                     <button onClick={() => removeItem(index, props.cartObject, props.setCartObject)}>Remove</button>
-                                                                    <p>{"£" + item.value}</p>
+                                                                    <p>{"£" + item.price}</p>
                                                                 </div>)
     return list
 }
