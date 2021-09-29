@@ -21,7 +21,7 @@ export const Modal = (props) => {
                             <CartList cartKeys={props.cartKeys} setCartKeys={props.setCartKeys} />
                            </div>
                            <div>
-                               <p className="total">{"£" + total}</p>
+                               <p className="total">Total: {"£" + total}</p>
                            </div>
                        </ModalContent>
                    </ModalWrapper>
@@ -62,6 +62,7 @@ const ModalContent = styled.div`
     flex-direction: column;
     justify-content: center
     align-items: center;
+    width: 900px;
 
     h1 {
         margin-left: 10px;
@@ -69,9 +70,11 @@ const ModalContent = styled.div`
     }
 
     .list {
+        width: 90%;
         margin-left: 50px;
         display: flex;
         flex-direction: column;
+
         flex-wrap: wrap;
         height: 100%;
 
@@ -84,26 +87,26 @@ const ModalContent = styled.div`
             height: 50px;
             width: 100px;
             font-size: 1.2em;
-            margin: 50px;
+            margin-left: 100px;
         }
 
         .item {
             display: flex;
-            justify-content: center;
             align-items: center;
             width: 100%;
-            margin-top: 20px;
             padding: 5px;
             border-bottom: 5px solid red;
         }
 
         p {
             font-size: 1.3em;
+            margin-left: 150px;
         }
     }
         .total {
             font-size: 1.5em;
             margin-left: 20px;
+            font-weight: bold;
         }
     }
 `
