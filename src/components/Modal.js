@@ -65,7 +65,7 @@ const ModalContent = styled.div`
     width: 900px;
 
     h1 {
-        margin-left: 10px;
+        margin-left: 20px;
         font-size: 2.5em;
     }
 
@@ -88,6 +88,7 @@ const ModalContent = styled.div`
             width: 100px;
             font-size: 1.2em;
             margin-left: 100px;
+            cursor: pointer;
         }
 
         .item {
