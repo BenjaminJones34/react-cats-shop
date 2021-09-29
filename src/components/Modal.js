@@ -96,7 +96,7 @@ const ModalContent = styled.div`
             align-items: center;
             width: 100%;
             padding: 5px;
-            border-bottom: 5px solid red;
+            border-bottom: 5px solid black;
         }
 
         p {
