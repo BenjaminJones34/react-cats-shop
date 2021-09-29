@@ -2,11 +2,16 @@ import './App.css';
 import Cat from "./components/Cat.js";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import Cart from "./components/Cart"
 const faker = require("faker");
 
 const App = () => {
     const [theData, setData] = useState([]);
     const [curprice, setPrice] = useState(0);
+    const [cartObject, setCartObject] = useState({
+                                                  itemsInCart: [],
+                                                  showModal: false,
+                                                });
 
     useEffect(() => {
         HandleFetch();
@@ -37,12 +42,15 @@ const App = () => {
             url: url,
             desc: desc
         };
-        console.log(cat)
+        let tempCart = cartObject;
+        tempCart.itemsInCart = [...tempCart.itemsInCart, cat];
+        setCartObject(tempCart);  
     }
 
     return (
       <div>
           <h1> Cats 4 Lyfe</h1>
+          <Cart cartObject={cartObject} setCartObject={setCartObject} />
           <StyledPetBox className="petBox">
           {theData.map((item, index) => (
               <Cat key={index} url={item.url} name={item.name} price={item.price} breed={item.breed} desc={item.desc} HandleBasket={HandleBasket} HandleSend={HandleSend}/>))}
