@@ -11,29 +11,37 @@ const App = () => {
         HandleFetch();
     }, []);
 
-
     const HandleFetch = async () => {
         let response = await fetch("https://api.thecatapi.com/v1/images/search?limit=5");
         let data = await response.json();
-        // name={faker.name.findName()} price={faker.commerce.price()}
-        console.log(data);
         for (let i = 0; i < data.length; i++) {
             const item = data[i];
-            item.name=faker.name.findName()
-            item.price=faker.commerce.price()
-        }
+            item.name = faker.name.findName();
+            item.price = faker.commerce.price();
+            item.breed = faker.animal.cat();
+    }
         setData(data);
     };
 
     const HandleBasket = (price) => {
-        let Nprice = parseInt(price);
-        setPrice(curprice + Nprice)
+        setPrice(curprice + parseInt(price))
+    }
+
+    const HandleSend = (name, price, breed, url) => {
+        let cat = {
+            name: name,
+            price: price,
+            breed: breed,
+            url: url
+        };
+        console.log(cat)
     }
 
     return (
       <div>
+          <h1> Cats 4 Lyfe</h1>
           {theData.map((item, index) => (
-              <Cat key={index} url={item.url} name={item.name} price={item.price} HandleBasket={HandleBasket}/>))}
+              <Cat key={index} url={item.url} name={item.name} price={item.price} breed={item.breed} HandleBasket={HandleBasket} HandleSend={HandleSend}/>))}
               <p>{curprice}</p>
       </div>
   )
