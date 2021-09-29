@@ -64,5 +64,4 @@ const StyledPetBox = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
 `
-
 export default App;
