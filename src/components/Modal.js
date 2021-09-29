@@ -4,21 +4,21 @@ import CartList from "./CartList"
 
 export const Modal = (props) => {
     let total = 0
-    for (let i = 0; i < props.cartKeys.itemsInCart.length; i++) {
-        total += parseInt(props.cartKeys.itemsInCart[i].value)
+    for (let i = 0; i < props.cartObject.itemsInCart.length; i++) {
+        total += parseInt(props.cartObject.itemsInCart[i].value)
     }
     total = total.toFixed(2).toString()
 
     return (
         <>
-            {props.cartKeys.showModal ? (
+            {props.cartObject.showModal ? (
                 <Background>
-                   <ModalWrapper showModal={props.cartKeys.showModal}>
+                   <ModalWrapper showModal={props.cartObject.showModal}>
                        <ModalContent>
-                           <CloseModalButton aria-label="Close modal" onClick={() => {props.setCartKeys({itemsInCart: props.cartKeys.itemsInCart, showModal: !props.cartKeys.showModal})}} />
+                           <CloseModalButton aria-label="Close modal" onClick={() => {props.setCartObject({itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal})}} />
                            <h1>Cart:</h1>
                            <div className="list">
-                            <CartList cartKeys={props.cartKeys} setCartKeys={props.setCartKeys} />
+                            <CartList cartObject={props.cartObject} setCartObject={props.setCartObject} />
                            </div>
                            <div>
                                <p className="total">Total: {"£" + total}</p>

@@ -16,14 +16,14 @@ const CartContainer = styled.div`
 
 const Cart = (props) => {
     const openModal = () => {
-        props.setCartKeys({ itemsInCart: props.cartKeys.itemsInCart, showModal: !props.cartKeys.showModal, })
+        props.setCartObject({ itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal, })
     }
     
     return (
         <div className="">
             <CartContainer>
                 <button onClick={openModal} className="cartButton">Cart</button>
-                <Modal cartKeys={props.cartKeys} setCartKeys={props.setCartKeys}/>
+                <Modal cartObject={props.cartObject} setCartObject={props.setCartObject}/>
             </CartContainer>  
         </div>
     )
