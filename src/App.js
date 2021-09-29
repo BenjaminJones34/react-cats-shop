@@ -1,6 +1,7 @@
 import './App.css';
 import Cat from "./components/Cat.js";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 const faker = require("faker");
 
 const App = () => {
@@ -12,13 +13,14 @@ const App = () => {
     }, []);
 
     const HandleFetch = async () => {
-        let response = await fetch("https://api.thecatapi.com/v1/images/search?limit=5");
+        let response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
         let data = await response.json();
         for (let i = 0; i < data.length; i++) {
             const item = data[i];
             item.name = faker.name.findName();
             item.price = faker.commerce.price();
             item.breed = faker.animal.cat();
+            item.desc = faker.commerce.productAdjective();
     }
         setData(data);
     };
@@ -27,12 +29,13 @@ const App = () => {
         setPrice(curprice + parseInt(price))
     }
 
-    const HandleSend = (name, price, breed, url) => {
+    const HandleSend = (name, price, breed, url, desc) => {
         let cat = {
             name: name,
             price: price,
             breed: breed,
-            url: url
+            url: url,
+            desc: desc
         };
         console.log(cat)
     }
@@ -40,11 +43,17 @@ const App = () => {
     return (
       <div>
           <h1> Cats 4 Lyfe</h1>
+          <StyledPetBox className="petBox">
           {theData.map((item, index) => (
-              <Cat key={index} url={item.url} name={item.name} price={item.price} breed={item.breed} HandleBasket={HandleBasket} HandleSend={HandleSend}/>))}
-              <p>{curprice}</p>
+              <Cat key={index} url={item.url} name={item.name} price={item.price} breed={item.breed} desc={item.desc} HandleBasket={HandleBasket} HandleSend={HandleSend}/>))}
+        </StyledPetBox>
       </div>
   )
 }
 
+const StyledPetBox = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`
 export default App;
