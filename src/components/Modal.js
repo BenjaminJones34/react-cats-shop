@@ -8,6 +8,13 @@ export const Modal = (props) => {
         total += parseFloat(props.cartObject.itemsInCart[i].price)
     }
     total = total.toFixed(2).toString()
+    let amountOfItems = props.cartObject.itemsInCart.length
+    let amountOfItemsText = ""
+    if (amountOfItems === 1) {
+        amountOfItemsText = "1 item"
+    } else {
+        amountOfItemsText = `${amountOfItems} items`
+    }
 
     return (
         <>
@@ -16,7 +23,7 @@ export const Modal = (props) => {
                    <ModalWrapper showModal={props.cartObject.showModal}>
                        <ModalContent>
                            <CloseModalButton aria-label="Close modal" onClick={() => {props.setCartObject({itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal})}} />
-                           <h1>Cart: {props.cartObject.itemsInCart.length} items</h1>
+                           <h1>Cart: {amountOfItemsText}</h1>
                            <div className="list">
                             <CartList cartObject={props.cartObject} setCartObject={props.setCartObject} />
                            </div>
