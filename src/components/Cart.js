@@ -11,7 +11,14 @@ const CartContainer = styled.div`
         cursor: pointer;
         border-radius: 3px;
         font-size: 1.3em;
+        background-color: #E8A87C;
+        margin-bottom: 10px;
+        margin-right: 10px;
     }
+    .cartButton:hover {
+        transform: scale(1.1);
+    }
+    
 `
 
 const Cart = (props) => {
@@ -28,7 +35,6 @@ const Cart = (props) => {
         </div>
     )
 }
-
 
 
 export default Cart

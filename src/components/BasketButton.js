@@ -11,7 +11,7 @@ const BasketButton = ({name, price, breed, HandleBasket, HandleSend, url, desc})
 
     return (
         <StyledForm onSubmit={HandleSubmit}>
-            <button type="submit" price={price}>Add to basket</button>
+            <button type="submit" price={price}>Add to Cart</button>
         </StyledForm>
     )
 };

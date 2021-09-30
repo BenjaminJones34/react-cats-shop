@@ -26,6 +26,10 @@ margin-bottom: 30px;
     img{
         max-width: 100%;
     }
+    img:hover {
+        transform: scale(1.4);
+        border: 2px solid black;
+    }
     .textBox {
         display: flex;
         border-top: 2px solid black;
@@ -34,9 +38,13 @@ margin-bottom: 30px;
         flex-direction: column;
         background-color: #41B3A3;
         flex: 1;
+        padding-bottom: 5px;
     }
     p{
         width: 100%;
+    }
+    p:hover {
+        text-decoration: underline;
     }
 `
 export default Cat;
