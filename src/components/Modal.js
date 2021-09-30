@@ -27,8 +27,13 @@ export const Modal = (props) => {
                            <div className="list">
                             <CartList cartObject={props.cartObject} setCartObject={props.setCartObject} />
                            </div>
-                           <div>
-                               <p className="total">Total: {"£" + total}</p>
+                           <div className="totalSection">
+                               <div className="totalTextSection">
+                                    <p className="total">Total: {"£" + total}</p>
+                               </div>
+                               <div className="purchaseSection">
+                                    <button>Purchase Items</button>
+                               </div>
                            </div>
                        </ModalContent>
                    </ModalWrapper>
@@ -149,6 +154,32 @@ const ModalContent = styled.div`
         }
 
     }
+        .totalSection {
+            display: flex;
+
+            .purchaseSection {
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .totalTextSection {
+                width: 50%;
+            }
+
+            button {
+                height: 100px;
+                width: 200px;
+                margin-top: 20px;
+                font-size: 2em;
+                background-color: blue;
+                color: white;
+                cursor: pointer;
+                border-radius: 10px;
+                margin-right: 20px;
+            }
+        }
+
         .total {
             font-size: 3em;
             margin-left: 150px;
