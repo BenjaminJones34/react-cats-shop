@@ -11,6 +11,18 @@ const CartContainer = styled.div`
         cursor: pointer;
         border-radius: 3px;
         font-size: 1.3em;
+        margin: 10px;
+        background-image: linear-gradient(180deg, rgba(0, 0, 230, 1), rgba(0, 153, 255, 1));
+        color: whitesmoke;
+        text-shadow: 2px 2px 5px black;
+        transform: scale(1);
+        transition: text-shadow 0.4s, transform 0.4s;
+    }
+
+    .cartButton:hover {
+        transform: scale(1.2);
+        text-shadow: 1px 1px 4px gold;
+        transition: all 0.5s;
     }
 `
 
