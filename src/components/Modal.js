@@ -56,6 +56,8 @@ const ModalWrapper = styled.div`
     position: relative;
     z-index: 10;
     border-radius: 10px;
+    max-height: 100vh;
+    overflow-y: auto;
 `
 const ModalContent = styled.div`
     display: flex;
