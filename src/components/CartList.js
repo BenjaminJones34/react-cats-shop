@@ -1,7 +1,7 @@
 export const CartList = (props) => {
     const removeItem = (index, cartObject, setCartObject) => {
         let newArray = cartObject.itemsInCart
-        let temp = newArray.splice(index, 1)
+        newArray.splice(index, 1)
         return setCartObject({itemsInCart: newArray, showModal: cartObject.showModal})
     }
 

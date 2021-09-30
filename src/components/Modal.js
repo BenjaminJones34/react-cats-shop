@@ -49,7 +49,6 @@ const Background = styled.div`
     align-items: center;
     margin: 0;
     padding: 0;
-    transition: background-color 2s;
 `
 
 const ModalWrapper = styled.div`
@@ -57,7 +56,8 @@ const ModalWrapper = styled.div`
     height: fit;
     padding-bottom: 20px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-    background: #fff;
+    background: orange;
+    border: 5px groove red;
     color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -76,18 +76,25 @@ const ModalContent = styled.div`
     width: 85vw;
 
     h1 {
-        margin-left: 20px;
-        font-size: 2.5em;
+        margin-left: 40px;
+        font-size: 3em;
+        color: purple;
+        text-decoration: underline;
     }
 
     .list {
-        width: 90%;
+        width: 95%;
         margin-left: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
         height: 100%;
+        padding-right: 10px;
+        padding-left: 0px;
+        border: 6px solid grey;
+        border-left: none;
+        border-bottom: none;
 
         .imageSection {
             height: 200px;
@@ -105,20 +112,28 @@ const ModalContent = styled.div`
         .nameSection {
             width: 20%;
             font-size: 1.5em;
-            margin-left: 50px;
+
+            text-shadow: 2px 2px 4px grey;
         }
 
         .priceSection {
             width: 20%;
             font-size: 1.5em;
-            margin-left: 50px;
+           
+            color: green;
+            font-weight: 900;
+        }
+
+        .buttonSection {
+            width: 30%;
+            text-align: center;
         }
 
         button {
             height: 50px;
             width: 100px;
             font-size: 1.2em;
-            margin-left: 100px;
+            margin-left: 50px;
             cursor: pointer;
             background-color: red;
             color: whitesmoke;
@@ -128,15 +143,20 @@ const ModalContent = styled.div`
             display: flex;
             align-items: center;
             width: 100%;
-            padding: 5px;
-            border-bottom: 5px solid black;
+            border-bottom: 8px groove rgba(0, 153, 153, 0.8);
+            border-left: 10px ridge rgba(0, 153, 153, 0.8);
+            background-color: rgb(255, 190, 100)
         }
 
     }
         .total {
-            font-size: 2em;
-            margin-left: 50px;
+            font-size: 3em;
+            margin-left: 150px;
+            margin-bottom: 30px;
             font-weight: bold;
+            color: green;
+            text-shadow: 2px 2px 2px black;
+            text-decoration: underline;
         }
     }
 `

@@ -16,13 +16,14 @@ const CartContainer = styled.div`
         color: whitesmoke;
         text-shadow: 2px 2px 5px black;
         transform: scale(1);
-        transition: text-shadow 0.4s, transform 0.4s;
+        transition: text-shadow 0.2s, transform 0.2s, font-size 0.1s;
     }
 
     .cartButton:hover {
         transform: scale(1.2);
         text-shadow: 1px 1px 4px gold;
-        transition: all 0.5s;
+        font-size: 1.6em;
+        transition: transform 0.2s, text-shadow 0.2s, font-size 0.15s;
     }
 `
 
