@@ -4,8 +4,6 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Cart from "./Cart";
 import faker from "faker";
-import CatPage from './CatPage';
-
 
 const Main = (props) => {
   const [theData, setData] = useState([]);
@@ -50,33 +48,22 @@ const Main = (props) => {
 
   return (
     <div>
-      <Switch>
-        <Route path="/:id">
-          <CatPage />
-        </Route>
-        <Route path="/">
-          <StyledTitle> Cats 4 Lyfe</StyledTitle>
-          <p>Amount in wallet: £{parseFloat(props.cartObject.wallet).toFixed(2)}</p>
-          <Cart
-            cartObject={props.cartObject}
-            setCartObject={props.setCartObject}
-          />
+      <StyledTitle> Cats 4 Lyfe</StyledTitle>
+      <p>Amount in wallet: £{parseFloat(props.cartObject.wallet).toFixed(2)}</p>
+      <Cart cartObject={props.cartObject} setCartObject={props.setCartObject} />
 
-          <StyledPetBox className="petBox">
-            {theData.map((item, index) => (
-              <Cat
-                key={index}
-                {...item}
-                HandleBasket={HandleBasket}
-                HandleSend={HandleSend}
-              />
-            ))}
-          </StyledPetBox>
-        </Route>
-      </Switch>
+      <StyledPetBox className="petBox">
+        {theData.map((item, index) => (
+          <Cat
+            key={index}
+            {...item}
+            HandleBasket={HandleBasket}
+            HandleSend={HandleSend}
+          />
+        ))}
+      </StyledPetBox>
     </div>
   );
-
 };
 const StyledPetBox = styled.div`
   display: flex;

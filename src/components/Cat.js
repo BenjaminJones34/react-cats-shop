@@ -24,7 +24,7 @@ const Cat = ({
         <Link
           to={{
             pathname: `/${id}`,
-            state: { name, breed, desc, price, id, url, mainDesc},
+            state: { name, breed, desc, price, id, url, mainDesc },
           }}
         >
           More Info
