@@ -25,6 +25,10 @@ const CartContainer = styled.div`
         font-size: 1.6em;
         transition: transform 0.2s, text-shadow 0.2s, font-size 0.15s;
     }
+    .cartButton:hover {
+        transform: scale(1.1);
+    }
+    
 `
 
 const Cart = (props) => {
@@ -41,7 +45,6 @@ const Cart = (props) => {
         </div>
     )
 }
-
 
 
 export default Cart

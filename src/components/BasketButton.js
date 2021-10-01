@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const BasketButton = ({name, price, breed, HandleBasket, HandleSend, url, desc}) => {
     
     const HandleSubmit = (e) => {
@@ -8,10 +10,19 @@ const BasketButton = ({name, price, breed, HandleBasket, HandleSend, url, desc})
     };
 
     return (
-        <form onSubmit={HandleSubmit}>
-            <button type="submit" price={price}>Add to basket</button>
-        </form>
+        <StyledForm onSubmit={HandleSubmit}>
+            <button type="submit" price={price}>Add to Cart</button>
+        </StyledForm>
     )
 };
 
+const StyledForm = styled.form`
+button {    
+background-color: #E8A87C;
+
+}
+button:hover {
+    transform: scale(1.1);
+}
+`
 export default BasketButton;

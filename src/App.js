@@ -18,7 +18,7 @@ const App = () => {
     }, []);
 
     const HandleFetch = async () => {
-        let response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
+        let response = await fetch("https://api.thecatapi.com/v1/images/search?limit=12");
         let data = await response.json();
         for (let i = 0; i < data.length; i++) {
             const item = data[i];
@@ -49,7 +49,7 @@ const App = () => {
 
     return (
       <div>
-          <h1> Cats 4 Lyfe</h1>
+          <StyledTitle> Cats 4 Lyfe</StyledTitle>
           <Cart cartObject={cartObject} setCartObject={setCartObject} />
           <StyledPetBox className="petBox">
           {theData.map((item, index) => (
@@ -63,5 +63,8 @@ const StyledPetBox = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+`
+const StyledTitle = styled.h1`
+text-align: center;
 `
 export default App;
