@@ -1,6 +1,5 @@
 import Cat from "./Cat.js";
 import { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import Cart from "./Cart";
 import faker from "faker";

@@ -13,7 +13,6 @@ const App = () => {
     });
     
     return (
-<<<<<<< HEAD
       <Router>
         <Switch>
           <Route path="/checkOut">
@@ -28,19 +27,6 @@ const App = () => {
         </Switch>
       </Router>
     );
-=======
-        <Router>
-            <Switch>
-                <Route path="/checkOut" exact>
-                    <CheckOut cartObject={cartObject} setCartObject={setCartObject} />
-                </Route>
-                <Route path="/" exact>
-                    <Main cartObject={cartObject} setCartObject={setCartObject} />
-                </Route>
-            </Switch>
-        </Router>
-    )
->>>>>>> 36fedf77a051b5f0c16ea53b8fb7936291be3e11
 }
 
 export default App
