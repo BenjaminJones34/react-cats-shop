@@ -4,6 +4,8 @@ import Main from "./components/Main"
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import CheckOut from './components/CheckOut';
 
+
+
 const App = () => {
     const [cartObject, setCartObject] = useState({
         itemsInCart: [],
