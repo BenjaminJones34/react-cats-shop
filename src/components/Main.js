@@ -26,6 +26,7 @@ const Main = (props) => {
       item.price = faker.commerce.price();
       item.breed = faker.animal.cat();
       item.desc = faker.commerce.productAdjective();
+      item.mainDesc = faker.address.cityName();
     }
     setData(data);
   };

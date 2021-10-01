@@ -11,6 +11,7 @@ const Cat = ({
   url,
   HandleBasket,
   HandleSend,
+  mainDesc
 }) => {
   return (
     <StyledCat>
@@ -23,7 +24,7 @@ const Cat = ({
         <Link
           to={{
             pathname: `/${id}`,
-            state: { name, breed, desc, price, id, url },
+            state: { name, breed, desc, price, id, url, mainDesc},
           }}
         >
           More Info
