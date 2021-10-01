@@ -1,20 +1,28 @@
 import styled from "styled-components"
 import { MdClose } from "react-icons/md"
 import CartList from "./CartList"
+import { Link } from "react-router-dom"
 
 export const Modal = (props) => {
-    let total = 0
-    for (let i = 0; i < props.cartObject.itemsInCart.length; i++) {
-        total += parseFloat(props.cartObject.itemsInCart[i].price)
+
+    const calculateTotal = (cartObject) => {
+        let purchaseTotal = 0
+        for (let i = 0; i < cartObject.itemsInCart.length; i++) {
+            purchaseTotal += parseFloat(cartObject.itemsInCart[i].price)
+        }
+        purchaseTotal = purchaseTotal.toFixed(2).toString()
+        let amountOfItems = cartObject.itemsInCart.length
+        let amountOfItemsText = ""
+        if (amountOfItems === 1) {
+            amountOfItemsText = "1 item"
+        } else {
+            amountOfItemsText = `${amountOfItems} items`
+        } return [purchaseTotal, amountOfItemsText]
     }
-    total = total.toFixed(2).toString()
-    let amountOfItems = props.cartObject.itemsInCart.length
-    let amountOfItemsText = ""
-    if (amountOfItems === 1) {
-        amountOfItemsText = "1 item"
-    } else {
-        amountOfItemsText = `${amountOfItems} items`
-    }
+
+    let totalArray = calculateTotal(props.cartObject)
+
+    console.log(props.cartObject)
 
     return (
         <>
@@ -22,17 +30,20 @@ export const Modal = (props) => {
                 <Background>
                    <ModalWrapper showModal={props.cartObject.showModal}>
                        <ModalContent>
-                           <CloseModalButton aria-label="Close modal" onClick={() => {props.setCartObject({itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal})}} />
-                           <h1>Cart: {amountOfItemsText}</h1>
+                           <CloseModalButton aria-label="Close modal" onClick={() => {props.setCartObject({itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal, wallet: props.cartObject.wallet})}} />
+                           <h1>Cart: {totalArray[1]}</h1>
                            <div className="list">
                             <CartList cartObject={props.cartObject} setCartObject={props.setCartObject} />
                            </div>
                            <div className="totalSection">
                                <div className="totalTextSection">
-                                    <p className="total">Total: {"£" + total}</p>
+                                    <p className="purchaseTotal">Total: {"£" + totalArray[0]}</p>
+                                    <p>Amount in wallet: £{parseFloat(props.cartObject.wallet).toFixed(2)}</p>
                                </div>
                                <div className="purchaseSection">
-                                    <button>Purchase Items</button>
+                                    <Link to="/checkOut">
+                                        <button disabled={props.cartObject.itemsInCart.length === 0 || props.cartObject.wallet < totalArray[0] ? true : false}>Go to check-out</button>
+                                    </Link>
                                </div>
                            </div>
                        </ModalContent>
@@ -180,7 +191,7 @@ const ModalContent = styled.div`
             }
         }
 
-        .total {
+        .purchaseTotal {
             font-size: 3em;
             margin-left: 150px;
             margin-bottom: 30px;

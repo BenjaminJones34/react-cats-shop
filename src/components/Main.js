@@ -46,6 +46,7 @@ const Main = (props) => {
     return (
         <div>
             <StyledTitle> Cats 4 Lyfe</StyledTitle>
+            <p>Amount in wallet: £{parseFloat(props.cartObject.wallet).toFixed(2)}</p>
             <Cart cartObject={props.cartObject} setCartObject={props.setCartObject} />
             <StyledPetBox className="petBox">
                 {theData.map((item, index) => (
