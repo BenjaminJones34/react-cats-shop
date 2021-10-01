@@ -16,14 +16,11 @@ const App = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/checkOut">
+                <Route path="/checkOut" exact>
                     <CheckOut cartObject={cartObject} setCartObject={setCartObject} />
                 </Route>
                 <Route path="/" exact>
                     <Main cartObject={cartObject} setCartObject={setCartObject} />
-                </Route>
-                <Route path="/:id"> {/*individual product page*/}
-
                 </Route>
             </Switch>
         </Router>
