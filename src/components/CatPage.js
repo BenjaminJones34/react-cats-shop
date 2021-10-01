@@ -21,7 +21,7 @@ const CatPage = () => {
       </StyledButton>
       <StyledCatPage>
         <h1>Cat name: {name}</h1>
-        <img src={url} />
+        <img src={url} alt="cat"/>
         <p>Breed: {breed}</p>
         <p>One words description: {desc}</p>
         <p>Pickup from: {mainDesc}</p>
