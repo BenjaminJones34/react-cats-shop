@@ -33,7 +33,7 @@ const CartContainer = styled.div`
 
 const Cart = (props) => {
     const openModal = () => {
-        props.setCartObject({ itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal, })
+        props.setCartObject({ itemsInCart: props.cartObject.itemsInCart, showModal: !props.cartObject.showModal, wallet: props.cartObject.wallet})
     }
     
     return (

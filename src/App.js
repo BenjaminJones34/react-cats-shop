@@ -1,7 +1,10 @@
 import './App.css';
 import { useState } from "react"
 import Main from "./components/Main"
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import CheckOut from './components/CheckOut';
+
+
 
 const App = () => {
     const [cartObject, setCartObject] = useState({
@@ -13,10 +16,13 @@ const App = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/">
+                <Route path="/checkOut">
+                    <CheckOut cartObject={cartObject} setCartObject={setCartObject} />
+                </Route>
+                <Route path="/" exact>
                     <Main cartObject={cartObject} setCartObject={setCartObject} />
                 </Route>
-                <Route path="/checkOut">
+                <Route path="/:id"> {/*individual product page*/}
 
                 </Route>
             </Switch>

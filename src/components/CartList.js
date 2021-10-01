@@ -1,12 +1,10 @@
 export const CartList = (props) => {
-  const removeItem = (index, cartObject, setCartObject) => {
-    let newArray = cartObject.itemsInCart;
-    newArray.splice(index, 1);
-    return setCartObject({
-      itemsInCart: newArray,
-      showModal: cartObject.showModal,
-    });
-  };
+
+    const removeItem = (index, cartObject, setCartObject) => {
+        let newArray = cartObject.itemsInCart
+        newArray.splice(index, 1)
+        return setCartObject({itemsInCart: newArray, showModal: cartObject.showModal, wallet: cartObject.wallet})
+    }
 
   let list = props.cartObject.itemsInCart.map((item, index) => (
     <div className="item" id={index}>

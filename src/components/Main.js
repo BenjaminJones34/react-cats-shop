@@ -56,6 +56,7 @@ const Main = (props) => {
         </Route>
         <Route path="/">
           <StyledTitle> Cats 4 Lyfe</StyledTitle>
+          <p>Amount in wallet: £{parseFloat(props.cartObject.wallet).toFixed(2)}</p>
           <Cart
             cartObject={props.cartObject}
             setCartObject={props.setCartObject}
@@ -75,6 +76,7 @@ const Main = (props) => {
       </Switch>
     </div>
   );
+
 };
 const StyledPetBox = styled.div`
   display: flex;
