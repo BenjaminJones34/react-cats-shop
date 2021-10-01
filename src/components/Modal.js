@@ -22,8 +22,6 @@ export const Modal = (props) => {
 
     let totalArray = calculateTotal(props.cartObject)
 
-    console.log(props.cartObject)
-
     return (
         <>
             {props.cartObject.showModal ? (
