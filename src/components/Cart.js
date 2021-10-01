@@ -11,9 +11,19 @@ const CartContainer = styled.div`
         cursor: pointer;
         border-radius: 3px;
         font-size: 1.3em;
-        background-color: #E8A87C;
-        margin-bottom: 10px;
-        margin-right: 10px;
+        margin: 10px;
+        background-image: linear-gradient(180deg, rgba(0, 0, 230, 1), rgba(0, 153, 255, 1));
+        color: whitesmoke;
+        text-shadow: 2px 2px 5px black;
+        transform: scale(1);
+        transition: text-shadow 0.2s, transform 0.2s, font-size 0.1s;
+    }
+
+    .cartButton:hover {
+        transform: scale(1.2);
+        text-shadow: 1px 1px 4px gold;
+        font-size: 1.6em;
+        transition: transform 0.2s, text-shadow 0.2s, font-size 0.15s;
     }
     .cartButton:hover {
         transform: scale(1.1);
