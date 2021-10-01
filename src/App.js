@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from "react"
 import Main from "./components/Main"
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 const App = () => {
     const [cartObject, setCartObject] = useState({
@@ -15,9 +15,6 @@ const App = () => {
             <Switch>
                 <Route path="/">
                     <Main cartObject={cartObject} setCartObject={setCartObject} />
-                </Route>
-                <Route path="/:id"> {/*individual product page*/}
-
                 </Route>
                 <Route path="/checkOut">
 
